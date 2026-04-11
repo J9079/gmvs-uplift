@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Heart, Users, BookOpen, Stethoscope, Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
-import heroImg from "@/assets/hero-women.jpg";
-import educationImg from "@/assets/education-program.jpg";
-import healthImg from "@/assets/health-program.jpg";
-import livelihoodImg from "@/assets/livelihood-program.jpg";
+import heroImg from "@/assets/stitching-centre.jpg";
+import womenMeetingImg from "@/assets/women-meeting.jpg";
+import healthImg from "@/assets/health-checkup.jpg";
+import plantImg from "@/assets/plant-nursery.jpg";
 
 const stats = [
   { number: "50,000+", label: "Lives Impacted" },
@@ -15,10 +15,10 @@ const stats = [
 ];
 
 const programs = [
-  { icon: Users, title: "Women Empowerment", desc: "Building leadership, self-reliance and economic independence for rural women through SHGs and training.", img: livelihoodImg },
-  { icon: BookOpen, title: "Education", desc: "Promoting literacy, adult education and quality learning for children in underserved communities.", img: educationImg },
+  { icon: Users, title: "Women Empowerment", desc: "Building leadership, self-reliance and economic independence for rural women through SHGs and training.", img: womenMeetingImg },
+  { icon: BookOpen, title: "Education", desc: "Promoting literacy, adult education and quality learning for children in underserved communities.", img: heroImg },
   { icon: Stethoscope, title: "Health & Nutrition", desc: "Community health camps, maternal care and nutrition programs for women and children.", img: healthImg },
-  { icon: Sprout, title: "Sustainable Agriculture", desc: "Organic farming, water conservation and climate-resilient practices for rural livelihoods.", img: livelihoodImg },
+  { icon: Sprout, title: "Sustainable Agriculture", desc: "Organic farming, water conservation and climate-resilient practices for rural livelihoods.", img: plantImg },
 ];
 
 const Home = () => (
@@ -26,7 +26,7 @@ const Home = () => (
     {/* Hero */}
     <section className="relative min-h-[90vh] flex items-center">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="GMVS rural women empowerment" className="w-full h-full object-cover" width={1920} height={1080} />
+        <img src={heroImg} alt="GMVS Women Empowerment Stitching Training Centre" className="w-full h-full object-cover" width={1920} height={1080} />
         <div className="absolute inset-0 bg-foreground/60" />
       </div>
       <div className="relative container-narrow section-padding !pt-32 text-background">
@@ -76,7 +76,7 @@ const Home = () => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="group bg-card rounded-xl overflow-hidden shadow-soft hover-lift">
                 <div className="h-48 overflow-hidden">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width={800} height={600} />
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">

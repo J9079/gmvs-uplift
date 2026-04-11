@@ -3,26 +3,26 @@ import { X } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { motion, AnimatePresence } from "framer-motion";
 
-import heroImg from "@/assets/hero-women.jpg";
-import educationImg from "@/assets/education-program.jpg";
-import healthImg from "@/assets/health-program.jpg";
-import livelihoodImg from "@/assets/livelihood-program.jpg";
-import agricultureImg from "@/assets/agriculture-program.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import aboutImg from "@/assets/about-team.jpg";
+import plantImg from "@/assets/plant-nursery.jpg";
+import womenMeetingImg from "@/assets/women-meeting.jpg";
+import healthImg from "@/assets/health-checkup.jpg";
+import officeTeamImg from "@/assets/office-team.jpg";
+import communityImg from "@/assets/community-meeting.jpg";
+import womenTrainingImg from "@/assets/women-training.jpg";
+import stitchingImg from "@/assets/stitching-centre.jpg";
+import awardImg from "@/assets/award-ceremony.jpg";
+import officeTeam2Img from "@/assets/office-team-2.jpg";
 
 const images = [
-  { src: heroImg, alt: "Women empowerment program", category: "Empowerment" },
-  { src: educationImg, alt: "Education initiative", category: "Education" },
-  { src: livelihoodImg, alt: "Stitching training", category: "Livelihood" },
-  { src: healthImg, alt: "Health camp", category: "Health" },
-  { src: agricultureImg, alt: "Sustainable agriculture", category: "Agriculture" },
-  { src: gallery1, alt: "Community life", category: "Community" },
-  { src: gallery2, alt: "Self help group meeting", category: "Empowerment" },
-  { src: gallery3, alt: "Children in school", category: "Education" },
-  { src: aboutImg, alt: "GMVS team", category: "Team" },
+  { src: stitchingImg, alt: "Women Empowerment Stitching Training Centre", category: "Empowerment" },
+  { src: womenMeetingImg, alt: "Women's group meeting at Gram Panchayat", category: "Empowerment" },
+  { src: healthImg, alt: "Health checkup camp", category: "Health" },
+  { src: plantImg, alt: "Plant nursery initiative", category: "Agriculture" },
+  { src: womenTrainingImg, alt: "Women training session", category: "Training" },
+  { src: communityImg, alt: "Community livelihood meeting", category: "Community" },
+  { src: officeTeamImg, alt: "GMVS office team", category: "Team" },
+  { src: awardImg, alt: "Award ceremony with government officials", category: "Recognition" },
+  { src: officeTeam2Img, alt: "GMVS team at office", category: "Team" },
 ];
 
 const Gallery = () => {
