@@ -1,6 +1,6 @@
 import { Target, Eye, Award, Users } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import aboutImg from "@/assets/about-team.jpg";
+import officeTeamImg from "@/assets/office-team.jpg";
 
 const values = [
   { icon: Target, title: "Mission", desc: "To empower rural communities, especially women and children, through education, health, livelihood and sustainable development." },
@@ -19,7 +19,7 @@ const About = () => (
         </AnimatedSection>
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <AnimatedSection>
-            <img src={aboutImg} alt="GMVS Team" className="rounded-xl shadow-soft w-full" loading="lazy" width={800} height={600} />
+            <img src={officeTeamImg} alt="GMVS Team" className="rounded-xl shadow-soft w-full" loading="lazy" />
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
             <h2 className="font-heading text-2xl font-bold text-foreground mb-4">Gramin Mahila Vikas Sansthan</h2>
