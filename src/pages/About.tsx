@@ -1,15 +1,39 @@
-import { Target, Eye, Award, Users, Phone } from "lucide-react";
+import { Target, Eye, Award, Users, Phone, User } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import officeTeamImg from "@/assets/office-team.jpg";
 import teamShankarImg from "@/assets/team-shankar.jpg";
 import teamShambhuImg from "@/assets/team-shambhu.jpg";
 import teamShivrajImg from "@/assets/team-shivraj.jpg";
 
-const team = [
-  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg },
-  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg },
-  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg },
+interface TeamMember {
+  name: string;
+  role: string;
+  phone: string;
+  image?: string;
+  category: "leadership" | "management" | "staff";
+}
+
+const team: TeamMember[] = [
+  // Leadership
+  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg, category: "leadership" },
+  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg, category: "leadership" },
+  // Management
+  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg, category: "management" },
+  { name: "Ramesh Kumar", role: "Manager", phone: "9876543210", category: "management" },
+  { name: "Sunita Devi", role: "Treasurer", phone: "9876543211", category: "management" },
+  // Staff
+  { name: "Kavita Sharma", role: "Field Coordinator", phone: "9876543212", category: "staff" },
+  { name: "Rajendra Meena", role: "Program Officer", phone: "9876543213", category: "staff" },
+  { name: "Geeta Rawat", role: "Community Worker", phone: "9876543214", category: "staff" },
+  { name: "Mohan Lal", role: "Office Assistant", phone: "9876543215", category: "staff" },
+  { name: "Priya Kumari", role: "Data Entry Operator", phone: "9876543216", category: "staff" },
 ];
+
+const categoryLabels: Record<string, string> = {
+  leadership: "Directors & Leadership",
+  management: "Management & Accounts",
+  staff: "Staff & Field Workers",
+};
 
 const values = [
   { icon: Target, title: "Mission", desc: "To empower rural communities, especially women and children, through education, health, livelihood and sustainable development." },
@@ -73,21 +97,37 @@ const About = () => (
           <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-2">Our Team</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Meet the People Behind GMVS</h2>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {team.map((member, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
-                <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
-                <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
-                <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
-                <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
-                  <Phone className="w-4 h-4" />
-                  {member.phone}
-                </a>
+        {(["leadership", "management", "staff"] as const).map((cat) => {
+          const members = team.filter((m) => m.category === cat);
+          return (
+            <div key={cat} className="mb-10 last:mb-0">
+              <AnimatedSection>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-6 text-center">{categoryLabels[cat]}</h3>
+              </AnimatedSection>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {members.map((member, i) => (
+                  <AnimatedSection key={i} delay={i * 0.1}>
+                    <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
+                      {member.image ? (
+                        <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
+                      ) : (
+                        <div className="w-20 h-20 rounded-full gradient-warm flex items-center justify-center mb-4 shadow-soft">
+                          <User className="w-8 h-8 text-primary-foreground" />
+                        </div>
+                      )}
+                      <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
+                      <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
+                      <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
+                        <Phone className="w-4 h-4" />
+                        {member.phone}
+                      </a>
+                    </div>
+                  </AnimatedSection>
+                ))}
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   </div>
