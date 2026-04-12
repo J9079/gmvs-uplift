@@ -77,9 +77,7 @@ const About = () => (
           {team.map((member, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full gradient-warm flex items-center justify-center mb-4">
-                  <User className="w-10 h-10 text-primary-foreground" />
-                </div>
+                <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
                 <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
                 <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
                 <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
