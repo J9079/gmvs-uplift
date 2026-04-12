@@ -1,15 +1,39 @@
-import { Target, Eye, Award, Users, Phone } from "lucide-react";
+import { Target, Eye, Award, Users, Phone, User } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import officeTeamImg from "@/assets/office-team.jpg";
 import teamShankarImg from "@/assets/team-shankar.jpg";
 import teamShambhuImg from "@/assets/team-shambhu.jpg";
 import teamShivrajImg from "@/assets/team-shivraj.jpg";
 
-const team = [
-  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg },
-  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg },
-  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg },
+interface TeamMember {
+  name: string;
+  role: string;
+  phone: string;
+  image?: string;
+  category: "leadership" | "management" | "staff";
+}
+
+const team: TeamMember[] = [
+  // Leadership
+  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg, category: "leadership" },
+  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg, category: "leadership" },
+  // Management
+  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg, category: "management" },
+  { name: "Ramesh Kumar", role: "Manager", phone: "9876543210", category: "management" },
+  { name: "Sunita Devi", role: "Treasurer", phone: "9876543211", category: "management" },
+  // Staff
+  { name: "Kavita Sharma", role: "Field Coordinator", phone: "9876543212", category: "staff" },
+  { name: "Rajendra Meena", role: "Program Officer", phone: "9876543213", category: "staff" },
+  { name: "Geeta Rawat", role: "Community Worker", phone: "9876543214", category: "staff" },
+  { name: "Mohan Lal", role: "Office Assistant", phone: "9876543215", category: "staff" },
+  { name: "Priya Kumari", role: "Data Entry Operator", phone: "9876543216", category: "staff" },
 ];
+
+const categoryLabels: Record<string, string> = {
+  leadership: "Directors & Leadership",
+  management: "Management & Accounts",
+  staff: "Staff & Field Workers",
+};
 
 const values = [
   { icon: Target, title: "Mission", desc: "To empower rural communities, especially women and children, through education, health, livelihood and sustainable development." },
