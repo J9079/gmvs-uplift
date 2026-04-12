@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import gmvsLogo from "@/assets/gmvs-logo.jpg";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
@@ -7,9 +8,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-full gradient-warm flex items-center justify-center">
-              <span className="font-heading font-bold text-lg">G</span>
-            </div>
+            <img src={gmvsLogo} alt="GMVS Logo" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-heading font-bold text-lg">GMVS</span>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
