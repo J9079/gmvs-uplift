@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import gmvsLogo from "@/assets/gmvs-logo.jpg";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -21,9 +22,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-narrow section-padding !py-0 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full gradient-warm flex items-center justify-center">
-            <span className="font-heading text-primary-foreground font-bold text-lg">G</span>
-          </div>
+          <img src={gmvsLogo} alt="GMVS Logo" className="w-10 h-10 rounded-full object-cover" />
           <div className="flex flex-col leading-tight">
             <span className="font-heading font-bold text-foreground text-sm md:text-base">GMVS</span>
             <span className="text-[10px] md:text-xs text-muted-foreground">Gramin Mahila Vikas Sansthan</span>
