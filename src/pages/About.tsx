@@ -1,11 +1,14 @@
-import { Target, Eye, Award, Users, Phone, User } from "lucide-react";
+import { Target, Eye, Award, Users, Phone } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import officeTeamImg from "@/assets/office-team.jpg";
+import teamShankarImg from "@/assets/team-shankar.jpg";
+import teamShambhuImg from "@/assets/team-shambhu.jpg";
+import teamShivrajImg from "@/assets/team-shivraj.jpg";
 
 const team = [
-  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032" },
-  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033" },
-  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002" },
+  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg },
+  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg },
+  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg },
 ];
 
 const values = [
@@ -74,9 +77,7 @@ const About = () => (
           {team.map((member, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
               <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full gradient-warm flex items-center justify-center mb-4">
-                  <User className="w-10 h-10 text-primary-foreground" />
-                </div>
+                <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
                 <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
                 <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
                 <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
