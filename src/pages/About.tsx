@@ -1,6 +1,12 @@
-import { Target, Eye, Award, Users } from "lucide-react";
+import { Target, Eye, Award, Users, Phone, User } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import officeTeamImg from "@/assets/office-team.jpg";
+
+const team = [
+  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032" },
+  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033" },
+  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002" },
+];
 
 const values = [
   { icon: Target, title: "Mission", desc: "To empower rural communities, especially women and children, through education, health, livelihood and sustainable development." },
