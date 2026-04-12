@@ -97,21 +97,37 @@ const About = () => (
           <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-2">Our Team</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">Meet the People Behind GMVS</h2>
         </AnimatedSection>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {team.map((member, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
-                <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
-                <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
-                <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
-                <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
-                  <Phone className="w-4 h-4" />
-                  {member.phone}
-                </a>
+        {(["leadership", "management", "staff"] as const).map((cat) => {
+          const members = team.filter((m) => m.category === cat);
+          return (
+            <div key={cat} className="mb-10 last:mb-0">
+              <AnimatedSection>
+                <h3 className="font-heading text-xl font-bold text-foreground mb-6 text-center">{categoryLabels[cat]}</h3>
+              </AnimatedSection>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {members.map((member, i) => (
+                  <AnimatedSection key={i} delay={i * 0.1}>
+                    <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
+                      {member.image ? (
+                        <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
+                      ) : (
+                        <div className="w-20 h-20 rounded-full gradient-warm flex items-center justify-center mb-4 shadow-soft">
+                          <User className="w-8 h-8 text-primary-foreground" />
+                        </div>
+                      )}
+                      <h3 className="font-heading font-semibold text-lg text-foreground">{member.name}</h3>
+                      <span className="text-primary font-medium text-sm mb-3">{member.role}</span>
+                      <a href={`tel:${member.phone}`} className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors">
+                        <Phone className="w-4 h-4" />
+                        {member.phone}
+                      </a>
+                    </div>
+                  </AnimatedSection>
+                ))}
               </div>
-            </AnimatedSection>
-          ))}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   </div>
