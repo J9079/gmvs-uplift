@@ -1,11 +1,14 @@
-import { Target, Eye, Award, Users, Phone, User } from "lucide-react";
+import { Target, Eye, Award, Users, Phone } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import officeTeamImg from "@/assets/office-team.jpg";
+import teamShankarImg from "@/assets/team-shankar.jpg";
+import teamShambhuImg from "@/assets/team-shambhu.jpg";
+import teamShivrajImg from "@/assets/team-shivraj.jpg";
 
 const team = [
-  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032" },
-  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033" },
-  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002" },
+  { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg },
+  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg },
+  { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg },
 ];
 
 const values = [
