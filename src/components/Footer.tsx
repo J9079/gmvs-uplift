@@ -43,15 +43,15 @@ const Footer = () => (
           <div className="flex flex-col gap-3 text-sm opacity-70">
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-              <span>Ajmer, Rajasthan, India</span>
+              <span>Village & Post Khoda Ganesh Road, Bubani, District Ajmer - 305023, Rajasthan, India</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 shrink-0" />
-              <span>info@gmvs.org.in</span>
+              <a href="mailto:bubanigmvs@gmail.com" className="hover:opacity-100 transition-opacity">bubanigmvs@gmail.com</a>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 shrink-0" />
-              <span>+91 XXXXX XXXXX</span>
+              <a href="tel:+919672979032" className="hover:opacity-100 transition-opacity">+91-9672979032</a>
             </div>
           </div>
         </div>
