@@ -3,16 +3,23 @@ import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const reports = [
-  { year: "2008-09", file: "/reports/annual-report-2008-09.pdf" },
-  { year: "2007-08", file: "/reports/annual-report-2007-08.pdf" },
-  { year: "2006-07", file: "/reports/annual-report-2006-07.pdf" },
-  { year: "2005-06", file: "/reports/annual-report-2005-06.pdf" },
-  { year: "2004-05", file: "/reports/annual-report-2004-05.pdf" },
-  { year: "2003-04", file: "/reports/annual-report-2003-04.pdf" },
-  { year: "2002-03", file: "/reports/annual-report-2002-03.pdf" },
-  { year: "2001-02", file: "/reports/annual-report-2001-02.pdf" },
-  { year: "2000-01", file: "/reports/annual-report-2000-01.pdf" },
-  { year: "1997-2000", file: "/reports/annual-report-1997-2000.pdf" },
+  { year: "2015-16", file: "/reports/annual-report-2015-16.pdf", thumb: "/reports/thumbs/annual-report-2015-16.jpg" },
+  { year: "2014-15", file: "/reports/annual-report-2014-15.pdf", thumb: "/reports/thumbs/annual-report-2014-15.jpg" },
+  { year: "2013-14", file: "/reports/annual-report-2013-14.pdf", thumb: "/reports/thumbs/annual-report-2013-14.jpg" },
+  { year: "2012-13", file: "/reports/annual-report-2012-13.pdf", thumb: "/reports/thumbs/annual-report-2012-13.jpg" },
+  { year: "2011-12", file: "/reports/annual-report-2011-12.pdf", thumb: "/reports/thumbs/annual-report-2011-12.jpg" },
+  { year: "2010-11", file: "/reports/annual-report-2010-11.pdf", thumb: "/reports/thumbs/annual-report-2010-11.jpg" },
+  { year: "2009-10", file: "/reports/annual-report-2009-10.pdf", thumb: "/reports/thumbs/annual-report-2009-10.jpg" },
+  { year: "2008-09", file: "/reports/annual-report-2008-09.pdf", thumb: "/reports/thumbs/annual-report-2008-09.jpg" },
+  { year: "2007-08", file: "/reports/annual-report-2007-08.pdf", thumb: "/reports/thumbs/annual-report-2007-08.jpg" },
+  { year: "2006-07", file: "/reports/annual-report-2006-07.pdf", thumb: "/reports/thumbs/annual-report-2006-07.jpg" },
+  { year: "2005-06", file: "/reports/annual-report-2005-06.pdf", thumb: "/reports/thumbs/annual-report-2005-06.jpg" },
+  { year: "2004-05", file: "/reports/annual-report-2004-05.pdf", thumb: "/reports/thumbs/annual-report-2004-05.jpg" },
+  { year: "2003-04", file: "/reports/annual-report-2003-04.pdf", thumb: "/reports/thumbs/annual-report-2003-04.jpg" },
+  { year: "2002-03", file: "/reports/annual-report-2002-03.pdf", thumb: "/reports/thumbs/annual-report-2002-03.jpg" },
+  { year: "2001-02", file: "/reports/annual-report-2001-02.pdf", thumb: "/reports/thumbs/annual-report-2001-02.jpg" },
+  { year: "2000-01", file: "/reports/annual-report-2000-01.pdf", thumb: "/reports/thumbs/annual-report-2000-01.jpg" },
+  { year: "1997-2000", file: "/reports/annual-report-1997-2000.pdf", thumb: "/reports/thumbs/annual-report-1997-2000.jpg" },
 ];
 
 const AnnualReports = () => {
@@ -38,46 +45,47 @@ const AnnualReports = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reports.map((report, index) => (
               <AnimatedSection key={report.year} delay={index * 0.05}>
-                <div className="group bg-card border border-border rounded-xl p-6 hover-lift transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-lg gradient-warm flex items-center justify-center">
-                      <FileText className="w-6 h-6 text-primary-foreground" />
+                <div className="group bg-card border border-border rounded-xl overflow-hidden hover-lift transition-all duration-300">
+                  {/* Cover Image */}
+                  <a href={report.file} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className="aspect-[3/4] overflow-hidden bg-muted">
+                      <img
+                        src={report.thumb}
+                        alt={`Annual Report ${report.year} Cover`}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-foreground text-lg">
-                        {report.year}
-                      </h3>
-                      <div className="flex items-center gap-1 text-muted-foreground text-sm">
-                        <Calendar className="w-3 h-3" />
-                        <span>Annual Report</span>
+                  </a>
+
+                  {/* Info */}
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-8 h-8 rounded-md gradient-warm flex items-center justify-center">
+                        <FileText className="w-4 h-4 text-primary-foreground" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-bold text-foreground text-base">
+                          {report.year}
+                        </h3>
+                        <div className="flex items-center gap-1 text-muted-foreground text-xs">
+                          <Calendar className="w-3 h-3" />
+                          <span>Annual Report</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <p className="text-muted-foreground text-sm mb-5">
-                    वार्षिक प्रतिवेदन {report.year} — संस्थान की गतिविधियों एवं उपलब्धियों का विवरण
-                  </p>
-
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 gap-2"
-                      asChild
-                    >
-                      <a href={report.file} target="_blank" rel="noopener noreferrer">
-                        <FileText className="w-4 h-4" /> View
-                      </a>
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="flex-1 gap-2 gradient-warm border-0 text-primary-foreground"
-                      asChild
-                    >
-                      <a href={report.file} download>
-                        <Download className="w-4 h-4" /> Download
-                      </a>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button variant="outline" size="sm" className="flex-1 gap-1.5 text-xs" asChild>
+                        <a href={report.file} target="_blank" rel="noopener noreferrer">
+                          <FileText className="w-3.5 h-3.5" /> View
+                        </a>
+                      </Button>
+                      <Button size="sm" className="flex-1 gap-1.5 text-xs gradient-warm border-0 text-primary-foreground" asChild>
+                        <a href={report.file} download>
+                          <Download className="w-3.5 h-3.5" /> Download
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
