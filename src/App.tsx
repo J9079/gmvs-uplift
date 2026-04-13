@@ -11,6 +11,7 @@ import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import AnnualReports from "./pages/AnnualReports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/impact" element={<Impact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/annual-reports" element={<AnnualReports />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

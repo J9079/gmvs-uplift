@@ -11,6 +11,7 @@ const navItems = [
   { label: "Programs", path: "/programs" },
   { label: "Impact", path: "/impact" },
   { label: "Gallery", path: "/gallery" },
+  { label: "Reports", path: "/annual-reports" },
   { label: "Contact", path: "/contact" },
 ];
 
