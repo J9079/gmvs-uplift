@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const reports = [
+  { year: "2023-24", file: "/reports/annual-report-2023-24.pdf", thumb: "/reports/thumbs/annual-report-2023-24.jpg" },
+  { year: "2022-23", file: "/reports/annual-report-2022-23.pdf", thumb: "/reports/thumbs/annual-report-2022-23.jpg" },
   { year: "2015-16", file: "/reports/annual-report-2015-16.pdf", thumb: "/reports/thumbs/annual-report-2015-16.jpg" },
   { year: "2014-15", file: "/reports/annual-report-2014-15.pdf", thumb: "/reports/thumbs/annual-report-2014-15.jpg" },
   { year: "2013-14", file: "/reports/annual-report-2013-14.pdf", thumb: "/reports/thumbs/annual-report-2013-14.jpg" },
