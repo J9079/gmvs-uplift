@@ -12,6 +12,9 @@ import Impact from "./pages/Impact";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import AnnualReports from "./pages/AnnualReports";
+import Stories from "./pages/Stories";
+import Events from "./pages/Events";
+import Awards from "./pages/Awards";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +35,9 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/annual-reports" element={<AnnualReports />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/awards" element={<Awards />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
