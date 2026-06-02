@@ -370,8 +370,54 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ============== CSR PARTNERSHIP DETAIL ============== */}
+      <section className="section-padding bg-background">
+        <div className="container-narrow">
+          <AnimatedSection className="max-w-3xl mb-10">
+            <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-2">For Corporates</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-3">
+              A CSR partner you can trust — and measure
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              GMVS is a Section 8 / FCRA / 12A / 80G compliant grassroots organisation. We co-design
+              programs with corporates and deliver transparent, SDG-aligned impact reporting at every milestone.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              { title: "CSR Compliance", desc: "Schedule VII aligned, fully documented projects." },
+              { title: "SDG Alignment", desc: "Mapped to UN Sustainable Development Goals." },
+              { title: "Project Monitoring", desc: "Field-level MIS, photos, GPS-tagged updates." },
+              { title: "Impact Reports", desc: "Quarterly and annual outcome dashboards." },
+              { title: "Financial Transparency", desc: "Audited utilisation certificates & FCRA filings." },
+            ].map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.06}>
+                <div className="bg-card border border-border rounded-2xl p-5 h-full hover-lift">
+                  <div className="w-10 h-10 rounded-lg bg-secondary text-secondary-foreground flex items-center justify-center font-heading font-bold mb-3">
+                    {i + 1}
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground mb-1.5">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection className="mt-8 flex flex-wrap gap-3">
+            <Button asChild size="lg" className="gradient-warm text-primary-foreground border-0 hover:opacity-90 gap-2">
+              <Link to="/contact"><HandHeart className="w-5 h-5" /> Partner with GMVS</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground gap-2">
+              <Link to="/annual-reports"><Mail className="w-5 h-5" /> View Impact Reports</Link>
+            </Button>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ============== PARTNERS / SUPPORTERS ============== */}
       <section className="section-padding bg-background">
+
         <div className="container-narrow">
           <AnimatedSection className="text-center mb-10">
             <p className="text-primary font-semibold uppercase tracking-widest text-sm mb-2">Our Partners & Supporters</p>
