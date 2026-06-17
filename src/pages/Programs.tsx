@@ -6,15 +6,23 @@ import stitchingImg from "@/assets/stitching-centre.jpg";
 import plantImg from "@/assets/plant-nursery.jpg";
 import womenTrainingImg from "@/assets/women-training.jpg";
 import communityImg from "@/assets/community-meeting.jpg";
+import programsData from "@/data/programs.json";
 
-const programs = [
-  { icon: Users, title: "Women Empowerment", img: womenMeetingImg, desc: "Through Self Help Groups, leadership training and skill development, we empower rural women to become self-reliant. Our stitching training programme has trained over 1,000 women in Jaipur district alone.", highlights: ["Self Help Groups (SHGs)", "Leadership & rights awareness", "Stitching & tailoring training", "Financial literacy"] },
-  { icon: BookOpen, title: "Education & Literacy", img: womenTrainingImg, desc: "We promote quality education for children and adult literacy for women. Our programs bridge the gap between rural communities and educational opportunities.", highlights: ["Adult literacy programs", "Girl child education", "Bridge schools", "Scholarship support"] },
-  { icon: Stethoscope, title: "Health & Nutrition", img: healthImg, desc: "Community health camps, maternal care programs, and nutrition initiatives ensuring every woman and child has access to basic healthcare.", highlights: ["Health camps & clinics", "Maternal & child health", "Nutrition awareness", "Sanitation & hygiene"] },
-  { icon: Sprout, title: "Sustainable Agriculture", img: plantImg, desc: "Promoting organic farming, water conservation and climate-resilient agricultural practices to improve rural livelihoods and food security.", highlights: ["Organic farming training", "Water harvesting", "Seed banks", "Market linkages"] },
-  { icon: Baby, title: "Child Welfare", img: stitchingImg, desc: "Ensuring children's rights, nutrition and education through community-based programs and advocacy.", highlights: ["Child rights advocacy", "Nutrition programs", "Early childhood care", "Youth development"] },
-  { icon: Briefcase, title: "Livelihood Support", img: communityImg, desc: "Creating sustainable employment opportunities through skill development, microenterprise support, and market linkages for rural communities.", highlights: ["Skill development", "Microenterprise support", "Vocational training", "Employment generation"] },
-];
+const iconMap = { Users, BookOpen, Stethoscope, Sprout, Baby, Briefcase } as const;
+const imgMap: Record<string, string> = {
+  "women-meeting": womenMeetingImg,
+  "health-checkup": healthImg,
+  "stitching-centre": stitchingImg,
+  "plant-nursery": plantImg,
+  "women-training": womenTrainingImg,
+  "community-meeting": communityImg,
+};
+
+const programs = programsData.map((p) => ({
+  ...p,
+  icon: iconMap[p.icon as keyof typeof iconMap],
+  img: imgMap[p.img],
+}));
 
 const Programs = () => (
   <div className="pt-20">
