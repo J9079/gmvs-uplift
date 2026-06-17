@@ -2,19 +2,14 @@ import { TrendingUp, MapPin, Users, Heart } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import impactData from "@/data/impact.json";
 
-const impactStats = [
-  { icon: Users, number: "50,000+", label: "Women Empowered" },
-  { icon: MapPin, number: "200+", label: "Villages Reached" },
-  { icon: TrendingUp, number: "1,000+", label: "Women Trained in Stitching" },
-  { icon: Heart, number: "10,000+", label: "Children Supported" },
-];
-
-const stories = [
-  { title: "Stitching Training Programme", location: "Jhotwara Block, Jaipur", desc: "Started in 2023, this flagship programme supported by HG Infra Engineering Ltd. targets training 1,000 rural women in stitching and tailoring for economic independence.", year: "2023–Present" },
-  { title: "Self Help Groups", location: "Ajmer District", desc: "Over 500 SHGs formed across villages, enabling women to save, access credit and start micro-enterprises — transforming household economies.", year: "Ongoing" },
-  { title: "Health & Nutrition Camps", location: "Multiple Districts", desc: "Regular community health camps providing maternal care, nutrition counselling and basic health services to underserved rural populations.", year: "Ongoing" },
-];
+const iconMap = { TrendingUp, MapPin, Users, Heart } as const;
+const impactStats = impactData.stats.map((s) => ({
+  ...s,
+  icon: iconMap[s.icon as keyof typeof iconMap],
+}));
+const stories = impactData.stories;
 
 const Impact = () => (
   <div className="pt-20">

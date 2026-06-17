@@ -1,0 +1,53 @@
+{
+  "upcoming": [
+    {
+      "title": "International Women's Day Celebration",
+      "date": "8 March 2026",
+      "location": "Bubani Community Hall, Ajmer",
+      "description": "A day-long programme celebrating women achievers from SHGs, featuring cultural performances, skill exhibitions, and guest speakers."
+    },
+    {
+      "title": "Health Camp & Immunisation Drive",
+      "date": "15 April 2026",
+      "location": "Khoda Ganesh, Ajmer",
+      "description": "Free health check-ups, vaccinations for children, and awareness sessions on maternal health in partnership with the District Health Department."
+    }
+  ],
+  "past": [
+    {
+      "title": "Annual SHG Federation Meeting",
+      "date": "December 2025",
+      "location": "Bubani, Ajmer",
+      "attendees": 150,
+      "description": "Representatives from 40+ Self Help Groups gathered to review progress, share best practices, and plan the year ahead."
+    },
+    {
+      "title": "World Environment Day — Plantation Drive",
+      "date": "5 June 2025",
+      "location": "Sawar Block, Ajmer",
+      "attendees": 200,
+      "description": "Community members and school children planted 500 saplings across three villages as part of GMVS's environment conservation mission."
+    },
+    {
+      "title": "Computer Literacy Workshop for Youth",
+      "date": "March 2025",
+      "location": "Bubani, Ajmer",
+      "attendees": 45,
+      "description": "A two-week workshop introducing basic computer skills, internet usage, and digital literacy to rural youth."
+    },
+    {
+      "title": "MNREGA Awareness Campaign",
+      "date": "January 2025",
+      "location": "Kishangarh Block, Ajmer",
+      "attendees": 300,
+      "description": "Village-level meetings to inform communities about their MNREGA entitlements, application process, and grievance redressal."
+    },
+    {
+      "title": "Stitching Training Graduation Ceremony",
+      "date": "November 2024",
+      "location": "Bubani, Ajmer",
+      "attendees": 60,
+      "description": "Thirty women completed a 6-month stitching and tailoring training programme and received certificates and starter kits."
+    }
+  ]
+}

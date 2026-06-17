@@ -1,0 +1,45 @@
+{
+  "awards": [
+    {
+      "title": "Best NGO Award — District Level",
+      "year": "2023",
+      "org": "District Administration, Ajmer",
+      "description": "Recognised for outstanding contribution to women empowerment and community development in rural Ajmer."
+    },
+    {
+      "title": "Excellence in Rural Health Initiatives",
+      "year": "2021",
+      "org": "Rajasthan State Health Department",
+      "description": "Awarded for successful immunisation drives and maternal health awareness campaigns across multiple blocks."
+    },
+    {
+      "title": "Women Self-Help Group Champion",
+      "year": "2019",
+      "org": "National Rural Livelihoods Mission (NRLM)",
+      "description": "Recognised for forming and sustaining over 40 Self Help Groups with exemplary savings and credit discipline."
+    },
+    {
+      "title": "Green Village Award",
+      "year": "2017",
+      "org": "Department of Environment, Rajasthan",
+      "description": "Honoured for large-scale plantation drives and environment conservation efforts across Sawar and Kishangarh blocks."
+    },
+    {
+      "title": "Child Rights Advocacy Recognition",
+      "year": "2015",
+      "org": "UNICEF India — Rajasthan Chapter",
+      "description": "Acknowledged for campaigns against child labour and successful re-enrolment of out-of-school children."
+    }
+  ],
+  "milestones": [
+    { "year": "1997", "text": "GMVS registered and begins operations in Bubani, Ajmer" },
+    { "year": "2002", "text": "First Self Help Groups formed with 200 rural women" },
+    { "year": "2005", "text": "Stitching and tailoring training centre established" },
+    { "year": "2008", "text": "Health awareness programme reaches 10,000 beneficiaries" },
+    { "year": "2012", "text": "Learning centres opened in 5 remote hamlets" },
+    { "year": "2015", "text": "Child labour awareness campaign enrolled 60 children back to school" },
+    { "year": "2018", "text": "Sustainable agriculture training expanded to 3 blocks" },
+    { "year": "2022", "text": "Crossed 500+ active SHG members across 40+ groups" },
+    { "year": "2024", "text": "Digital literacy programme launched for rural youth" }
+  ]
+}
