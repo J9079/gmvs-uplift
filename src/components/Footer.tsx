@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone, MapPin } from "lucide-react";
 import gmvsLogo from "@/assets/gmvs-logo.jpg";
+import footerBg from "@/assets/footer1.jpg";
 
 const Footer = () => (
-  <footer className="bg-foreground text-background">
-    <div className="container-narrow section-padding !py-12 md:!py-16">
+  <footer
+  className="relative text-slate-900 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${footerBg})`,
+  }}
+>
+  <div className="absolute inset-0 bg-white/10"></div>
+    <div className="relative z-10 container-narrow section-padding !py-12 md:!py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2 mb-4">
@@ -24,10 +31,10 @@ const Footer = () => (
             <Link to="/impact" className="hover:opacity-100 transition-opacity">Our Impact</Link>
             <Link to="/gallery" className="hover:opacity-100 transition-opacity">Gallery</Link>
             <Link to="/contact" className="hover:opacity-100 transition-opacity">Contact</Link>
-            <Link to="/stories" className="hover:opacity-100 transition-opacity">Stories</Link>
+            {/* <Link to="/stories" className="hover:opacity-100 transition-opacity">Stories</Link>
             <Link to="/events" className="hover:opacity-100 transition-opacity">Events</Link>
             <Link to="/awards" className="hover:opacity-100 transition-opacity">Awards</Link>
-            <Link to="/annual-reports" className="hover:opacity-100 transition-opacity">Annual Reports</Link>
+            <Link to="/annual-reports" className="hover:opacity-100 transition-opacity">Annual Reports</Link> */}
           </div>
         </div>
 

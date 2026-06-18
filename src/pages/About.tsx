@@ -4,6 +4,9 @@ import officeTeamImg from "@/assets/office-team.jpg";
 import teamShankarImg from "@/assets/team-shankar.jpg";
 import teamShambhuImg from "@/assets/team-shambhu.jpg";
 import teamShivrajImg from "@/assets/team-shivraj.jpg";
+import teamdharaImg from "@/assets/team-dhara.jpg.jpeg";
+import teamanilImg from "@/assets/team-anilji.jpg.jpeg";
+import teamunImg from "@/assets/team-unknown.jpeg";
 
 interface TeamMember {
   name: string;
@@ -14,16 +17,19 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
+  { name: "Anil Kumar Mathur", role: "President", phone: "9672979032", image: teamanilImg, category: "leadership" },
   { name: "Shankar Singh Rawat", role: "Director", phone: "9672979032", image: teamShankarImg, category: "leadership" },
-  { name: "Shambhu Singh Rawat", role: "Director", phone: "9672979033", image: teamShambhuImg, category: "leadership" },
+  { name: "Shambhu Singh Rawat", role: "Board of directory & Treasure", phone: "9672979033", image: teamShambhuImg, category: "leadership" },
   { name: "Shivraj Singh Rawat", role: "Accountant", phone: "7426996002", image: teamShivrajImg, category: "management" },
-  { name: "Ramesh Kumar", role: "Manager", phone: "9876543210", category: "management" },
-  { name: "Sunita Devi", role: "Treasurer", phone: "9876543211", category: "management" },
-  { name: "Kavita Sharma", role: "Field Coordinator", phone: "9876543212", category: "staff" },
-  { name: "Rajendra Meena", role: "Program Officer", phone: "9876543213", category: "staff" },
-  { name: "Geeta Rawat", role: "Community Worker", phone: "9876543214", category: "staff" },
-  { name: "Mohan Lal", role: "Office Assistant", phone: "9876543215", category: "staff" },
-  { name: "Priya Kumari", role: "Data Entry Operator", phone: "9876543216", category: "staff" },
+  { name: "Dhara Singh Rawat", role: "ICICI Loan Distributor", phone: "9876543210",image: teamdharaImg, category: "management" },
+  { name: "Ramesh Kumar", role: "Manager", phone: "9876543210",image: teamunImg,  category: "management" },
+  { name: "Ranjit Singh", role: "Manager", phone: "9876543210",image: teamunImg, category: "management" },
+  { name: "Sunita Devi", role: "Treasurer", phone: "9876543211",image: teamunImg, category: "management" },
+  { name: "Kavita Sharma", role: "Field Coordinator", phone: "9876543212",image: teamunImg, category: "staff" },
+  { name: "Rajendra Meena", role: "Program Officer", phone: "9876543213",image: teamunImg, category: "staff" },
+  { name: "Geeta Rawat", role: "Community Worker", phone: "9876543214",image: teamunImg, category: "staff" },
+  { name: "Mohan Lal", role: "Office Assistant", phone: "9876543215",image: teamunImg, category: "staff" },
+  { name: "Priya Kumari", role: "Data Entry Operator", phone: "9876543216",image: teamunImg, category: "staff" },
 ];
 
 const categoryLabels: Record<string, string> = {
@@ -174,7 +180,20 @@ const About = () => (
                   <AnimatedSection key={i} delay={i * 0.1}>
                     <div className="bg-card rounded-xl p-6 shadow-soft hover-lift text-center h-full flex flex-col items-center">
                       {member.image ? (
-                        <img src={member.image} alt={member.name} className="w-20 h-20 rounded-full object-cover mb-4 shadow-soft" />
+                        <img
+                            src={member.image}
+                            alt={member.name}
+                            className="
+                              w-[250px]
+                              h-[250px]
+                              min-w-[180px]
+                              min-h-[180px]
+                              object-cover
+                              object-center
+                              rounded-xl
+                              overflow-hidden
+                            "
+                          />
                       ) : (
                         <div className="w-20 h-20 rounded-full gradient-warm flex items-center justify-center mb-4 shadow-soft">
                           <User className="w-8 h-8 text-primary-foreground" />

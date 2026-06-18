@@ -38,8 +38,8 @@ const navGroups: NavGroup[] = [
     label: "Work With Us",
     children: [
       { label: "Contact", path: "/contact", desc: "Get in touch" },
-      { label: "Partner / CSR", path: "/contact", desc: "Collaborate with GMVS" },
-      { label: "Volunteer", path: "/contact", desc: "Join our mission" },
+      { label: "Partner / CSR", path: "/partner-csr", desc: "Collaborate with GMVS" },
+      { label: "Volunteer", path: "/volunteer ", desc: "Join our mission" },
     ],
   },
 ];

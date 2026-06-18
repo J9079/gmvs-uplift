@@ -11,6 +11,8 @@ import Programs from "./pages/Programs";
 import Impact from "./pages/Impact";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import PartnerCSR from "./pages/PartnerCSR"
+import Volunteer from "./pages/Volunteer"
 import AnnualReports from "./pages/AnnualReports";
 import Stories from "./pages/Stories";
 import Events from "./pages/Events";
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/impact" element={<Impact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/partner-csr" element={<PartnerCSR />} />
+            <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/annual-reports" element={<AnnualReports />} />
             <Route path="/stories" element={<Stories />} />
             <Route path="/events" element={<Events />} />
