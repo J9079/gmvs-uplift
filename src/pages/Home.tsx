@@ -66,7 +66,6 @@ const thrustAreas = [
 ];
 
 const stats = [
-  { number: "50,000+", label: "Lives Impacted" },
   { number: "200+", label: "Villages Reached" },
   { number: "27+", label: "Years of Service" },
   { number: "30+", label: "Active Programs" },
@@ -191,16 +190,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* impact ribbon below hero */}
-        <div className="bg-muted/60 border-y border-border">
-          <div className="container-narrow px-4 py-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs sm:text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">Lives Impacted:</span>
-            <span>Women Empowerment 12,000+</span><span className="opacity-40">|</span>
-            <span>Health Camps 25,000+</span><span className="opacity-40">|</span>
-            <span>Education 8,000+</span><span className="opacity-40">|</span>
-            <span>Sustainable Agriculture 5,000+</span>
-          </div>
-        </div>
       </section>
 
       {/* ============== VALUE WE BRING ============== */}
@@ -303,7 +292,7 @@ const Home = () => {
       {/* ============== IMPACT counters ============== */}
       <section className="gradient-warm text-primary-foreground">
         <div className="container-narrow section-padding !py-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {stats.map((s, i) => (
               <AnimatedSection key={s.label} delay={i * 0.1}>
                 <div className="text-4xl md:text-5xl font-heading font-bold">{s.number}</div>
