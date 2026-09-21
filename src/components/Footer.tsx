@@ -26,9 +26,24 @@ const Footer = () => (
             <img src={gmvsLogo} alt="GMVS Logo" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-heading font-bold text-lg">GMVS</span>
           </div>
-          <p className="text-sm opacity-70 leading-relaxed">
+          <p className="text-sm opacity-70 leading-relaxed mb-4">
             Gramin Mahila Vikas Sansthan — Empowering rural women and communities since inception through education, health, and sustainable development.
           </p>
+          <div className="flex items-center gap-2">
+            {socialLinks.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="w-9 h-9 rounded-full flex items-center justify-center bg-background/20 hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>
