@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Heart, Mail, Phone, MapPin, Youtube, Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 import gmvsLogo from "@/assets/gmvs-logo.jpg";
 import footerBg from "@/assets/footer1.jpg";
+
+export const socialLinks = [
+  { icon: Youtube, label: "YouTube", href: "https://youtube.com/@gmvs_official?si=AQ_XLjcn8jLeBcN-" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/gmvs-ajmer-ngo/" },
+  { icon: Twitter, label: "X (Twitter)", href: "https://x.com/gmvs98ajmer?t=stcg-pdrLu7C1VhCV17l5Q&s=09" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gmvsajmer?igsh=ZzFhb3lydmdrbjI3" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/1HcgqzkPM3/" },
+];
 
 const Footer = () => (
   <footer
@@ -18,9 +26,24 @@ const Footer = () => (
             <img src={gmvsLogo} alt="GMVS Logo" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-heading font-bold text-lg">GMVS</span>
           </div>
-          <p className="text-sm opacity-70 leading-relaxed">
+          <p className="text-sm opacity-70 leading-relaxed mb-4">
             Gramin Mahila Vikas Sansthan — Empowering rural women and communities since inception through education, health, and sustainable development.
           </p>
+          <div className="flex items-center gap-2">
+            {socialLinks.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="w-9 h-9 rounded-full flex items-center justify-center bg-background/20 hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>

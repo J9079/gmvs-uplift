@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { socialLinks } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -48,6 +49,24 @@ const Contact = () => {
                         <p className="text-sm text-foreground font-medium">{c.value}</p>
                       </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-4">Follow Us</h3>
+                <div className="flex items-center gap-2">
+                  {socialLinks.map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <Icon className="w-5 h-5" />
+                    </a>
                   ))}
                 </div>
               </div>
