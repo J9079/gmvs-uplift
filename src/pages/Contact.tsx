@@ -52,6 +52,24 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
+              <div>
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-4">Follow Us</h3>
+                <div className="flex items-center gap-2">
+                  {socialLinks.map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="w-10 h-10 rounded-full flex items-center justify-center bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      <Icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2} className="md:col-span-2">
